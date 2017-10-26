@@ -5,12 +5,14 @@
   width: 100%;
 
   &__pagination {
+    position: absolute;
     right: auto !important;
-    left: 60px;
-    width: 2px;
+    top: 50% !important;
+    bottom: auto !important;
+    left: 60px !important;
+    width: 2px !important;
     background-color: $color-white;
-
-
+    transform: translateY(-50%);
 
     &__bullet {
       display: block;

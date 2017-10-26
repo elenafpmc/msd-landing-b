@@ -4895,10 +4895,12 @@ $(function() {
 
 	var fullpage = new Swiper('.b_fullpage', {
     speed: 400,
-    direction: 'vertical',
+    direction: 'horizontal',
 		mousewheel: {
-			forceToAxis: true,
-			sensitivity: 500
+			forceToAxis: false,
+			sensitivity: 1,
+			releaseOnEdges: false,
+			invert: true
 		},
 		pagination: {
 	    el: '.b_fullpage__pagination',
