@@ -1,0 +1,29 @@
+@@include("core/html-start.html")
+
+	@@include("blocks/b_header.html")
+
+	<main id="landing-b" class="wrapper" role="main">
+		@@include("blocks/b_fullpage.html", {
+			"pagination": true,
+			"navigation": false,
+			"slides": [
+				{
+					"title": "Slide 1",
+					"text": "yeeha"
+				},
+				{
+					"title": "Slide 2",
+					"text": "yeehaa"
+				},
+				{
+					"title": "Slide 3",
+					"text": "yeehaaa"
+				}
+			]
+		})
+	</main>
+
+  @@include("blocks/b_footer.html")
+  @@include("core/plugins.js.html")
+
+@@include("core/html-end.html")

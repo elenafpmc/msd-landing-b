@@ -1,0 +1,30 @@
+.b_header{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
+  padding: 8vh 70px 0;
+  z-index: 10;
+
+  &__logo{
+    display: block;
+    max-height: 7vh;
+
+    &--left{
+      float: left;
+      padding-left: 30px;
+    }
+    &--right {
+      float: right;
+      padding-right: 30px;
+    }
+  }
+
+  &--transparent{
+    background-color: transparent;
+  }
+
+}

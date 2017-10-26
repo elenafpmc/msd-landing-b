@@ -1,0 +1,23 @@
+<!-- Slider main container -->
+<div class="b_fullpage swiper-container">
+
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+      <!-- Slides -->
+      @@for (var i = 0; i < slides.length; i++) {
+        @@include("b_fullpage-slide.html", `+(JSON.stringify(slides[i]))+` )
+      }
+  </div>
+
+  @@if (pagination === true) {
+    <!-- If we need pagination -->
+    <div class="b_fullpage__pagination swiper-pagination"></div>
+  }
+
+  @@if (navigation === true) {
+    <!-- If we need navigation buttons -->
+    <div class="b_fullpage__nav-next swiper-button-prev"></div>
+    <div class="b_fullpage__nav-prev swiper-button-next"></div>
+  }
+
+</div>
