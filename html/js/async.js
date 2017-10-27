@@ -4896,6 +4896,7 @@ $(function() {
 	var fullpage = new Swiper('.b_fullpage', {
     speed: 400,
     direction: 'horizontal',
+		slideActiveClass: 'b_fullpage__slide--active',
 		mousewheel: {
 			forceToAxis: false,
 			sensitivity: 1,
@@ -4915,7 +4916,9 @@ $(function() {
 	  }
 	});
 
-
+	$('.b_fullpage__scroll-down').on('click', function(){
+		fullpage.slideNext();
+	});
 
 
 	/*	--------------------------------------------------

@@ -1,17 +1,21 @@
-<div class="b_fullpage__slide swiper-slide" data-pagination="@@title">
-  <section class="b_special">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col b_special__img">
-          <img src="" alt="">
-        </div>
-        <div class="col b_special__content">
-          <h2>@@title</h2>
-          <p>
-            @@text
-          </p>
-        </div>
+<div class="b_fullpage__slide swiper-slide" data-pagination="@@section_name">
+  <section class="b_special container-fluid">
+    <div class="row align-items-center">
+      <div class="col b_special__img">
+        <img src="" alt="">
       </div>
+      <div class="col b_special__content">
+        <p class="b_special__content__text-before">@@text_before</p>
+        <p class="b_special__content__title">@@title</p>
+        <p class="b_special__content__text-after">@@text_after</p>
+        @@include("b_share.html")
+        <p class="b_special__content__text-note">@@text_note</p>
+      </div>
+      <div class="b_special__bg" style="
+        background: @@section_color_solid;
+        background-image: url('./img/landing-b/trama_bg.svg');
+        background-image: url('./img/landing-b/trama_bg.svg'), @@section_color;
+      "></div>
     </div>
   </section>
 </div>

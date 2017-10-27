@@ -1,4 +1,71 @@
 .b_fullpage__slide {
 
-  
+  .b_special {
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+
+    &__img{
+      position: relative;
+      z-index: 1;
+      height: 100vh;
+    }
+
+    &__content {
+      position: relative;
+      z-index: 3;
+      padding-left: 5vw;
+      padding-top: 10vh;
+
+      &__title {
+        font-family: $fontstack-edo;
+        font-size: 15vh;
+        line-height: 13.5vh;
+        color: $color-white;
+        margin-bottom: 5vh;
+
+        span{
+          display: block;
+
+          &:first-child{
+            margin-left: -4vw;
+          }
+        }
+      }
+      &__text-before,
+      &__text-after {
+        max-width: 70%;
+        font-family: $fontstack-roboto;
+        font-weight: $fontweight-black;
+        font-size: 22px;
+        line-height: 26px;
+        color: $color-white;
+        letter-spacing: 1px;
+        margin-bottom: 4.5vh;
+      }
+      &__text-note {
+        max-width: 50%;
+        font-family: $fontstack-roboto;
+        font-weight: $fontweight-regular;
+        font-size: 12px;
+        line-height: 26px;
+        color: $color-white;
+      }
+      sup {
+        padding: 0 3px;
+      }
+    }
+    &__bg {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-blend-mode: multiply;
+    }
+  }
 }

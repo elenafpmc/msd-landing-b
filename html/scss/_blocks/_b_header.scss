@@ -6,7 +6,7 @@
   right: 0;
   width: 100%;
   height: auto;
-  padding: 8vh 70px 0;
+  padding: 7vh 30px 0;
   z-index: 10;
 
   &__logo{
@@ -15,11 +15,9 @@
 
     &--left{
       float: left;
-      padding-left: 30px;
     }
     &--right {
       float: right;
-      padding-right: 30px;
     }
   }
 

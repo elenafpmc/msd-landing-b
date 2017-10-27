@@ -12,25 +12,33 @@ svg path:not(.custom-map),
 }
 
 .icon{
-	
+
 	&--xxs{
 		width: $icon-xxs*1px;
 		height: $icon-xxs*1px;
 	}
-	
+
 	&--xs{
 		width: $icon-xs*1px;
 		height: $icon-xs*1px;
 	}
-	
+
 	&--sm{
 		width: $icon-sm*1px;
 		height: $icon-sm*1px;
 	}
-	
+
 	&--md{
 		width: $icon-md*1px;
 		height: $icon-md*1px;
+	}
+	&--md-sm{
+		width: $icon-md-sm*1px;
+		height: $icon-md-sm*1px;
+	}
+	&--md-md{
+		width: $icon-md-md*1px;
+		height: $icon-md-md*1px;
 	}
 	&--md-lg{
 		width: $icon-md-lg*1px;
@@ -40,8 +48,5 @@ svg path:not(.custom-map),
 		width: $icon-lg*1px;
 		height: $icon-lg*1px;
 	}
-	
-	
-	
-}
 
+}

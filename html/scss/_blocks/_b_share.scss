@@ -1,0 +1,51 @@
+.b_share {
+  display: block;
+  position: relative;
+  text-align: left;
+  color: $color-white;
+  margin-bottom: 40px;
+
+  &__list {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @media(max-width: $screen-xs-max){
+
+    }
+
+    li {
+      display: inline-block;
+
+      a {
+        display: inline-block;
+        position: relative;
+        padding: 5px 0;
+        line-height: 40px;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        margin-right: 40px;
+
+        .icon {
+          transition: all 0.3s ease-out 0s;
+          fill: $color-white;
+        }
+
+        &:hover {
+
+          .icon {
+            fill: $color-white !important;
+          }
+        }
+
+        @media(max-width: $screen-xs-max){
+          padding: 12px 20px;
+          height: 48px;
+          width: auto;
+        }
+      }
+    }
+  }
+}
