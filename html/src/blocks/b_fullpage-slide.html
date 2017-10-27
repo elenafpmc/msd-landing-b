@@ -1,17 +1,24 @@
 <div class="b_fullpage__slide swiper-slide" data-pagination="@@section_name">
   <section class="b_special container-fluid">
     <div class="row align-items-center">
-      <div class="col b_special__img">
-        <img src="@@img_url" alt="">
-      </div>
-      <div class="col b_special__content">
+
+      @@if (img === true) {
+        <div class="col b_special__img">
+          <img src="@@img_url" alt="">
+        </div>
+      }
+
+      <div class="col b_special__content ml-auto">
         <p class="b_special__content__text-before">@@text_before</p>
         <p class="b_special__content__title">@@title</p>
         <p class="b_special__content__text-after">@@text_after</p>
+
         @@if (button === true) {
           <a class="b_special__content__button" href="@@button_link">@@button_text</a>
         }
+
         @@include("b_share.html")
+
         <p class="b_special__content__text-note">@@text_note</p>
       </div>
       <div class="b_special__bg" style="

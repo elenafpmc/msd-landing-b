@@ -8,10 +8,13 @@
     box-sizing: border-box;
     overflow: hidden;
 
+    > .row {
+      height: 100%;
+    }
     &__img{
       position: relative;
       z-index: 1;
-      height: 100vh;
+      height: 100%;
       text-align: right;
 
       img {
@@ -27,6 +30,7 @@
     &__content {
       position: relative;
       z-index: 3;
+      max-width: 70%;
       padding-left: 5vw;
       padding-top: 10vh;
 
