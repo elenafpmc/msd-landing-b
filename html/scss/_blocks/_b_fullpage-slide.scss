@@ -11,10 +11,12 @@
       position: relative;
       z-index: 1;
       height: 100vh;
+      text-align: right;
 
       img {
-        display: block;
+        display: inline-block;
         max-width: 100%;
+        max-height: 100%;
       }
     }
 
@@ -34,11 +36,15 @@
         span{
           display: block;
 
-          &:first-child{
+          &.move-left{
             margin-left: -4vw;
+          }
+          &.font-roboto{
+            font-family: $fontstack-roboto;
           }
         }
       }
+
       &__text-before,
       &__text-after {
         max-width: 70%;
@@ -49,7 +55,12 @@
         color: $color-white;
         letter-spacing: 1px;
         margin-bottom: 4.5vh;
+
+        &:empty {
+          display: none;
+        }
       }
+
       &__text-note {
         max-width: 50%;
         font-family: $fontstack-roboto;
@@ -57,7 +68,33 @@
         font-size: 12px;
         line-height: 26px;
         color: $color-white;
+
+        &:empty {
+          display: none;
+        }
       }
+
+      &__button {
+        display: inline-block;
+        font-family: $fontstack-roboto;
+        font-weight: $fontweight-black;
+        font-size: 24px;
+        line-height: 32px;
+        text-align: center;
+        padding: 33px 66px;
+        margin-bottom: 6vh;
+        background-color: rgba($color-white, 0.2);
+        border: 1px solid $color-white;
+        color: $color-white;
+        text-decoration: none;
+        transition: all 0.3s ease-out 0s;
+
+        &:hover {
+          background-color: rgba($color-white, 0.4);
+        }
+      }
+
+
       sup {
         padding: 0 3px;
       }
@@ -72,8 +109,6 @@
       bottom: 0;
       mix-blend-mode: multiply;
       background-blend-mode: multiply;
-      background-size: 58px 58px;
-      background-repeat: repeat;
     }
   }
 }
