@@ -11,6 +11,11 @@
       position: relative;
       z-index: 1;
       height: 100vh;
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
     }
 
     &__content {
@@ -65,7 +70,10 @@
       left: 0;
       right: 0;
       bottom: 0;
+      mix-blend-mode: multiply;
       background-blend-mode: multiply;
+      background-size: 58px 58px;
+      background-repeat: repeat;
     }
   }
 }

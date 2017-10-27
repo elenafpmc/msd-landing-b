@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="98px" height="98px" viewBox="0 0 98 98" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title></title>
     <desc></desc>
     <defs>
-        <rect id="path-1" x="0" y="0" width="120" height="120"></rect>
+        <rect id="path-1" x="0" y="0" width="98" height="98"></rect>
         <pattern id="pattern-2" width="14.4000006" height="14.4000006" x="-14.4000006" y="-14.4000006" patternUnits="userSpaceOnUse">
             <use xlink:href="#image-3" transform="scale(0.300000012,0.300000012)"></use>
         </pattern>
