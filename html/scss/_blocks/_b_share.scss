@@ -4,6 +4,8 @@
   text-align: left;
   color: $color-white;
   margin-bottom: 40px;
+  transition: opacity 1s ease-out 0.5s;
+  will-change: opacity;
 
   &__list {
     display: inline-block;

@@ -6,6 +6,7 @@
     height: 100%;
     width: 100%;
     box-sizing: border-box;
+    overflow: hidden;
 
     &__img{
       position: relative;
@@ -17,6 +18,9 @@
         display: inline-block;
         max-width: 100%;
         max-height: 100%;
+        transition: transform 1s ease-out 0.5s;
+        transform: translateX(-50vw);
+        will-change: transform;
       }
     }
 
@@ -32,6 +36,9 @@
         line-height: 13.5vh;
         color: $color-white;
         margin-bottom: 5vh;
+        transition: transform 1s ease-out 0.5s;
+        transform: translateX(70vw);
+        will-change: transform;
 
         span{
           display: block;
@@ -41,6 +48,11 @@
           }
           &.font-roboto{
             font-family: $fontstack-roboto;
+            font-size: 13vh;
+            padding-top: 1vh;
+          }
+          &.inline{
+            display: inline;
           }
         }
       }
@@ -55,9 +67,29 @@
         color: $color-white;
         letter-spacing: 1px;
         margin-bottom: 4.5vh;
+        transition: transform 1s ease-out 0.5s;
+        transform: translateX(50vw);
+        will-change: transform;
 
         &:empty {
           display: none;
+        }
+        span{
+          display: block;
+
+          &.move-left{
+            margin-left: -4vw;
+          }
+          &.inline{
+            display: inline;
+          }
+        }
+        small {
+          display: block;
+          font-size: 13px;
+          line-height: 20px;
+          letter-spacing: 0;
+          padding-top: 10px;
         }
       }
 
@@ -68,9 +100,22 @@
         font-size: 12px;
         line-height: 26px;
         color: $color-white;
+        transition: transform 1s ease-out 0.5s;
+        transform: translateX(50vw);
+        will-change: transform;
 
         &:empty {
           display: none;
+        }
+        span{
+          display: block;
+
+          &.move-left{
+            margin-left: -4vw;
+          }
+          &.inline{
+            display: inline;
+          }
         }
       }
 
@@ -87,7 +132,9 @@
         border: 1px solid $color-white;
         color: $color-white;
         text-decoration: none;
-        transition: all 0.3s ease-out 0s;
+        transition: opacity 1s ease-out 0.5s, background-color 0.3s ease-out 0s;
+        opacity: 0;
+        will-change: opacity;
 
         &:hover {
           background-color: rgba($color-white, 0.4);
@@ -109,6 +156,33 @@
       bottom: 0;
       mix-blend-mode: multiply;
       background-blend-mode: multiply;
+    }
+  }
+
+  &--active {
+    .b_special{
+      &__img img {
+        transform: translateX(0);
+      }
+      &__content{
+        &__title,
+        &__text-before,
+        &__text-after,
+        &__text-note {
+          transform: translateX(0);
+        }
+        &__button {
+          opacity: 1;
+        }
+      }
+      .b_share {
+        opacity: 1;
+      }
+    }
+  }
+  &:not([class*="--active"]){
+    .b_share {
+      opacity: 0;
     }
   }
 }
