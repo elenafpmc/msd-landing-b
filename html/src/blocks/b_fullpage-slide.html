@@ -12,12 +12,14 @@
         <p class="b_special__content__text-before">@@text_before</p>
         <p class="b_special__content__title">@@title</p>
         <p class="b_special__content__text-after">@@text_after</p>
-
+        
         @@if (button === true) {
           <a class="b_special__content__button" href="@@button_link">@@button_text</a>
         }
 
-        @@include("b_share.html")
+        @@if (share === true) {
+          @@include("b_share.html", { "class": "" })
+        }
 
         <p class="b_special__content__text-note">@@text_note</p>
       </div>

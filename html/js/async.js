@@ -4911,7 +4911,7 @@ $(function() {
 			bulletActiveClass: 'b_fullpage__pagination__bullet--active',
 			renderBullet: function (index, className) {
 				var slide = $('.b_fullpage__slide').eq(index);
-		    return '<span class="' + className + '">' + slide.data('pagination') + '</span>';
+		    return '<span class="' + className + '"><span>' + slide.data('pagination') + '</span></span>';
 		  }
 	  }
 	});

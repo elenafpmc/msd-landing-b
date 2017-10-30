@@ -25,4 +25,14 @@
     background-color: transparent;
   }
 
+  @media(max-width: $screen-sm-max){
+
+  }
+  @media(max-width: $screen-xs-max){
+    padding: 5vh 0 0;
+
+    &__logo{
+      max-height: 8vh;
+    }
+  }
 }

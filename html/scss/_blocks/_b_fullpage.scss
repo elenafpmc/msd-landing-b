@@ -11,16 +11,23 @@
     bottom: auto !important;
     left: 60px !important;
     width: 2px !important;
-    background-color: $color-white;
-    //transform: translateY(-50%);
+    background-color: #F7F7F7;
+    padding: 16px 0;
 
     &__bullet {
       display: block;
+      position: relative;
+      font-family: $fontstack-roboto;
+      font-weight: $fontweight-medium;
       font-size: 16px;
       line-height: 16px;
+      padding-left: 15px;
+      text-align: left;
+      letter-spacing: 1px;
       color: $color-white;
       white-space: nowrap;
       margin-bottom: 20px;
+      transition: all 0.3s ease-out 0s;
       cursor: pointer;
 
       &:last-child {
@@ -29,8 +36,9 @@
       &:before{
         content: '';
         display: inline-block;
-        position: relative;
+        position: absolute;
         left: -5px;
+        top: -2px;
         height: 12px;
         width: 12px;
         background-color: $color-white;
@@ -40,12 +48,16 @@
         transition: all 0.3s ease-out 0s;
         transform: scale(0, 0);
       }
+      &:hover {
+        font-weight: $fontweight-black;
+      }
       &--active{
+        font-weight: $fontweight-black;
+
         &:before {
           transform: scale(1, 1);
         }
       }
-
     }
   }
 
@@ -76,6 +88,58 @@
       line-height: 16px;
       letter-spacing: 1px;
       color: $color-white;
+    }
+  }
+
+  &__code {
+    position: absolute;
+    bottom: 5vh;
+    right: 60px;
+    z-index: 2;
+
+    p {
+      font-family: $fontstack-roboto;
+      font-weight: $fontweight-black;
+      font-size: 12px;
+      line-height: 16px;
+      color: $color-white;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  @media(max-width: $screen-sm-max){
+    &__pagination {
+      position: absolute;
+      right: auto !important;
+      top: 40% !important;
+      bottom: auto !important;
+      left: 15px !important;
+      width: 2px !important;
+      padding: 6px 0;
+
+      &__bullet {
+        font-size: 10px;
+        line-height: 14px;
+        margin-bottom: 12px;
+        white-space: nowrap;
+        span {
+          display: inline-block;
+          width: 20vw;
+          white-space: normal;
+        }
+      }
+    }
+    &__scroll-down {
+      bottom: 3vh;
+      left: 10px;
+      max-width: 45%;
+    }
+    &__code {
+      bottom: 3vh;
+      right: 10px;
+      max-width: 45%;
+      text-align: right;
     }
   }
 }
