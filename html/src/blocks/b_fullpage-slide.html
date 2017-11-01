@@ -1,10 +1,47 @@
 <div class="b_fullpage__slide swiper-slide" data-pagination="@@section_name">
-  <section class="b_special container-fluid">
+  @@if (background_img === true) {
+    <section class="b_special b_special--background container-fluid" style="background-image: url(@@background_img_url)">
+  }
+  @@if (background_img === false) {
+    <section class="b_special container-fluid">
+  }
+  @@if (background_video === true){
+    <video class="b_special__covervideo" autoplay loop poster="@@background_video_poster">
+        <source src="@@background_video_url" type="video/mp4">
+    </video>
+
+    <div class="b_special__video">
+      <video class="b_special__video__video">
+          <source src="@@background_video_url" type="video/mp4">
+      </video>
+      <div class="b_special__video__controls">
+        <div class="b_special__video__controls__progress"></div>
+        <a class="b_special__video__controls__back">
+          <svg  viewBox="0 0 64 64" width=""  class="icon icon--md" role="presentation"><use xlink:href="svg/symbol/svg/sprite.symbol.svg#player_back"></use></svg>
+        </a>
+        <a class="b_special__video__controls__play">
+          <svg  viewBox="0 0 64 64" width=""  class="icon icon--md" role="presentation"><use xlink:href="svg/symbol/svg/sprite.symbol.svg#player_play"></use></svg>
+        </a>
+        <a class="b_special__video__controls__pause">
+          <svg  viewBox="0 0 64 64" width=""  class="icon icon--md" role="presentation"><use xlink:href="svg/symbol/svg/sprite.symbol.svg#player_pause"></use></svg>
+        </a>
+        <a class="b_special__video__controls__forward">
+          <svg  viewBox="0 0 64 64" width=""  class="icon icon--md" role="presentation"><use xlink:href="svg/symbol/svg/sprite.symbol.svg#player_forward"></use></svg>
+        </a>
+      </div>
+      <a class="b_special__video__close">
+        <svg  viewBox="0 0 64 64" width=""  class="icon icon--md" role="presentation"><use xlink:href="svg/symbol/svg/sprite.symbol.svg#player_close"></use></svg>
+      </a>
+    </div>
+  }
+
     <div class="row align-items-center">
 
       @@if (img === true) {
         <div class="col b_special__img">
-          <img src="@@img_url" alt="">
+          @@if (img_url !== "") {
+            <img src="@@img_url" alt="">
+          }
         </div>
       }
 
@@ -12,16 +49,56 @@
         <p class="b_special__content__text-before">@@text_before</p>
         <p class="b_special__content__title">@@title</p>
         <p class="b_special__content__text-after">@@text_after</p>
-        
+
         @@if (button === true) {
           <a class="b_special__content__button" href="@@button_link">@@button_text</a>
         }
 
         @@if (share === true) {
-          @@include("b_share.html", { "class": "" })
+          @@if (share_style === "bubble") {
+            @@include("b_share.html", { "class": "b_share--bubble"})
+          }
+          @@if (share_style === "normal") {
+            @@include("b_share.html", { "class": ""})
+          }
         }
 
         <p class="b_special__content__text-note">@@text_note</p>
+
+        @@if (background_video === true){
+          <a class="b_special__content__play">
+            <svg  viewBox="0 0 64 64" width=""  class="icon icon--md-lg" role="presentation"><use xlink:href="svg/symbol/svg/sprite.symbol.svg#play_icon"></use></svg>
+          </a>
+        }
+
+        @@if (form === true){
+          <div class="b_special__content__form">
+            <form action="">
+              <p>Cada día es una oportunidad para vivir mejor.<br class="hide--xs"/> Nosotros te ayudamos a cuidar de tu salud.</p>
+              <div class="input-group"> <!-- Add class "invalid" : to set te invalid state of the form  -->
+                                        <!-- Add class "success" : to set te success state of the form  -->
+                <input type="text" class="form-control" placeholder="E-mail">
+                <span class="input-group-btn">
+                  <button class="btn" type="button">Suscríbete</button>
+                </span>
+                <span class="b_special__content__form__validation">
+                  [ ! ] El correo electronico no es válido.
+                </span>
+                <span class="b_special__content__form__success">
+                  <svg  viewBox="0 0 64 64" width=""  class="icon icon--md" role="presentation"><use xlink:href="svg/symbol/svg/sprite.symbol.svg#success_icon"></use></svg>
+                  ¡Gracias por suscribirte!
+                  <small>Pronto recibirás notícias nuestras</small>
+                </span>
+              </div>
+            </form>
+            <div class="b_special__content__form__copy">
+              <p><strong>Merck Sharp and Dohme de España.</strong> C/ Josefa Valcárcel, 38 - 28027 Madrid.</p>
+              <p>Copyright © 2017 Merck Sharp & Dohme Corp., a subsidiary of Merck & Co., Inc., Kenilworth, NJ, USA.</p>
+              <p>El contenido que se proporciona en esta Página Web es información general, en ningún caso debe sustituir ni la consulta, ni el tratamiento, ni las recomendaciones de tu médico.</p>
+            </div>
+          </div>
+        }
+
       </div>
       <div class="b_special__bg" style="
         background: @@section_color_solid;

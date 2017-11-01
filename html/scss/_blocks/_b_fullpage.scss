@@ -12,7 +12,7 @@
     left: 60px !important;
     width: 2px !important;
     background-color: #F7F7F7;
-    padding: 16px 0;
+    padding: 4px 0;
 
     &__bullet {
       display: block;
@@ -78,7 +78,7 @@
       position: relative;
       float: left;
       top: 0;
-      transition: all 0.3s ease-out 0s;
+      transition: all 0.15s ease-out 0s;
     }
     span {
       display: inline;
@@ -108,6 +108,28 @@
     }
   }
 
+  &.video-overlay-open {
+    .b_fullpage__pagination,
+    .b_fullpage__scroll-down,
+    .b_fullpage__code {
+      display: none;
+    }
+    .b_fullpage__slide--active .b_special__video {
+      display: block;
+    }
+    &.playing-video {
+      .b_fullpage__slide--active .b_special__video__controls {
+        &__play {
+          display: none;
+        }
+        &__pause {
+          display: inline;
+        }
+      }
+    }
+  }
+
+
   @media(max-width: $screen-sm-max){
     &__pagination {
       position: absolute;
@@ -116,7 +138,7 @@
       bottom: auto !important;
       left: 15px !important;
       width: 2px !important;
-      padding: 6px 0;
+      padding: 2px 0;
 
       &__bullet {
         font-size: 10px;
