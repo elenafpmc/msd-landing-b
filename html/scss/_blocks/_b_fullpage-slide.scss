@@ -23,7 +23,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: $color-black-0;
+      background-color: rgba($color-black-0, 0.4);
       z-index: 5;
 
       &__video{
@@ -474,8 +474,16 @@
             }
             &.font-roboto{
               font-family: $fontstack-roboto;
-              font-size: 11vw;
-              padding-top: 1vw;
+              font-size: 9.5vw;
+            }
+          }
+          small {
+            font-size: 100% !important;
+            line-height: 90% !important;
+
+            .font-roboto{
+              font-family: $fontstack-roboto;
+              padding-top: 0.5vh;
             }
           }
         }
@@ -520,6 +528,7 @@
           right: 10px;
           font-size: 9px;
           line-height: 13px;
+          max-width: 60%;
         }
 
         &__button {

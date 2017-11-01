@@ -5165,15 +5165,20 @@ $(function() {
 	  }
 	});
 
+	var scrollCount = 0;
 	var wheelIndicator = new WheelIndicator({
 	  "elem": document.querySelector('.b_fullpage'),
 	  "callback": function(e){
-	    console.log(e.direction) // "up" or "down"
-			if (e.direction === "up"){
+	    //console.log(e.direction); // "up" or "down"
+			if (e.direction === "up" && scrollCount === 0){
 				fullpage.slideNext();
 			}
-			else if (e.direction === "down"){
+			else if (e.direction === "down" && scrollCount === 0){
 				fullpage.slidePrev();
+			}
+			if (scrollCount === 0){
+				scrollCount = 1;
+				setTimeout(function (){ scrollCount = 0; }, 750);
 			}
 	  }
 	});
