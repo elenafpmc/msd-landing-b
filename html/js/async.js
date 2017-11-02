@@ -5258,7 +5258,8 @@ $(function() {
 	function covervid(){
 		var width = $(window).width();
 		var height = $(window).height();
-		$('.b_special__covervideo').coverVid(width, height);
+		var covervideo = $('.b_special__covervideo');
+		covervideo.coverVid(width, height);
 	}
 
 	// $(document).on('mousemove', function(ev){
