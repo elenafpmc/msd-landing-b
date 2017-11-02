@@ -38,13 +38,13 @@
         display: inline-block;
         position: absolute;
         left: -5px;
-        top: -2px;
+        top: 50%;
         height: 12px;
         width: 12px;
         background-color: $color-white;
         border-radius: 50%;
         margin-right: 5px;
-        margin-top: 2px;
+        margin-top: -6px;
         transition: all 0.3s ease-out 0s;
         transform: scale(0, 0);
       }
@@ -81,13 +81,18 @@
       transition: all 0.15s ease-out 0s;
     }
     span {
-      display: inline;
       font-family: $fontstack-roboto;
       font-weight: $fontweight-black;
       font-size: 10px;
       line-height: 16px;
       letter-spacing: 1px;
       color: $color-white;
+    }
+    &__text--desktop {
+      display: inline;
+    }
+    &__text--mobile {
+      display: none;
     }
   }
 
@@ -134,7 +139,7 @@
     &__pagination {
       position: absolute;
       right: auto !important;
-      top: 40% !important;
+      top: 28.5% !important;
       bottom: auto !important;
       left: 15px !important;
       width: 2px !important;
@@ -154,14 +159,35 @@
     }
     &__scroll-down {
       bottom: 3vh;
-      left: 10px;
+      left: 5px;
       max-width: 45%;
+
+      &__text--desktop {
+        display: none;
+      }
+      &__text--mobile {
+        display: inline;
+      }
+      svg {
+        transform: rotate(-90deg);
+        margin-right: 3px;
+        top: -5px;
+      }
+      &:hover {
+        > svg {
+          top: -5px;
+        }
+      }
     }
     &__code {
       bottom: 3vh;
       right: 10px;
       max-width: 45%;
       text-align: right;
+      p {
+        font-size: 10px;
+        line-height: 14px;
+      }
     }
   }
 }

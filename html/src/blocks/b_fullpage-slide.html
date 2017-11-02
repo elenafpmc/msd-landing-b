@@ -37,6 +37,42 @@
 
     <div class="row align-items-center">
 
+      @@if (circles === true) {
+        @@if(circle_top_desktop !== ""){
+          <span class="b_special__circle b_special__circle--desktop b_special__circle--top" style="@@circle_top_desktop"></span>
+        }
+        @@if(circle_top_mobile !== ""){
+          <span class="b_special__circle b_special__circle--mobile b_special__circle--top" style="@@circle_top_mobile"></span>
+        }
+        @@if(circle_bottom_desktop !== ""){
+          <span class="b_special__circle b_special__circle--desktop b_special__circle--bottom" style="@@circle_bottom_desktop"></span>
+        }
+        @@if(circle_bottom_mobile !== ""){
+          <span class="b_special__circle b_special__circle--mobile b_special__circle--bottom" style="@@circle_bottom_mobile"></span>
+        }
+      }
+
+      @@if (lines === true) {
+        @@if(line_top_desktop !== ""){
+          <span class="b_special__line b_special__line--desktop b_special__line--top" style="@@line_top_desktop"></span>
+        }
+        @@if(line_top_mobile !== ""){
+          <span class="b_special__line b_special__line--mobile b_special__line--top" style="@@line_top_mobile"></span>
+        }
+        @@if(line_middle_desktop !== ""){
+          <span class="b_special__line b_special__line--desktop b_special__line--middle" style="@@line_middle_desktop"></span>
+        }
+        @@if(line_middle_mobile !== ""){
+          <span class="b_special__line b_special__line--mobile b_special__line--middle" style="@@line_middle_mobile"></span>
+        }
+        @@if(line_bottom_desktop !== ""){
+          <span class="b_special__line b_special__line--desktop b_special__line--bottom" style="@@line_bottom_desktop"></span>
+        }
+        @@if(line_bottom_mobile !== ""){
+          <span class="b_special__line b_special__line--mobile b_special__line--bottom" style="@@line_bottom_mobile"></span>
+        }
+      }
+
       @@if (img === true) {
         <div class="col b_special__img">
           @@if (img_url !== "") {
