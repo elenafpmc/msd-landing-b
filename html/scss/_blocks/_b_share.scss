@@ -44,25 +44,11 @@
 
   &--bubble {
     margin-left: -5vw;
-    
-    .b_share__list {
-      li {
-        a {
-          background-color: $color-white;
-          border-radius: 50%;
-
-          .icon {
-            transition: all 0.3s ease-out 0s;
-            fill: #37424A;
-          }
-
-          &:hover {
-
-            .icon {
-              fill: $color-ebony-clay !important;
-            }
-          }
-        }
+    a {
+      padding: 5px 0;
+      svg {
+        width: 50px;
+        height: 50px;
       }
     }
   }
@@ -93,6 +79,17 @@
             width: 20px;
             height: 20px;
           }
+        }
+      }
+    }
+
+    &--bubble {
+      margin-left: -5vw;
+      a {
+        padding: 5px 0;
+        svg {
+          width: 30px;
+          height: 30px;
         }
       }
     }

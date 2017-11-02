@@ -92,10 +92,10 @@
 
         @@if (share === true) {
           @@if (share_style === "bubble") {
-            @@include("b_share.html", { "class": "b_share--bubble"})
+            @@include("b_share.html", { "style": "bubble"})
           }
           @@if (share_style === "normal") {
-            @@include("b_share.html", { "class": ""})
+            @@include("b_share.html", { "style": "normal"})
           }
         }
 
@@ -136,12 +136,8 @@
         }
 
       </div>
-      <div class="b_special__bg" style="
-        background: @@section_color_solid;
-        background-image: url('./img/landing-b/trama_bg.svg');
-        background-image: url('./img/landing-b/trama_bg.svg'), @@section_color;
-        background-size: 7px 7px, cover;
-      "></div>
+      <div class="b_special__bg__trama" style="background-image: url('./img/landing-b/trama_bg.svg');"></div>
+      <div class="b_special__bg__color" style="background: @@section_color;"></div>
     </div>
   </section>
 </div>

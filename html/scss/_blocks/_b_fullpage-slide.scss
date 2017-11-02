@@ -458,18 +458,24 @@
         }
       }
     }
-
-    &__bg {
+    &__bg__trama,
+    &__bg__color {
       display: block;
       position: absolute;
-      z-index: 3;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      mix-blend-mode: multiply;
       background-blend-mode: multiply;
-      opacity: 0.85;
+      mix-blend-mode: multiply;
+      z-index: 3;
+    }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      /* IE10+ CSS */
+      &__bg__trama,
+      &__bg__color {
+        z-index: 0;
+      }
     }
 
     @media(max-width: $screen-sm-max){
