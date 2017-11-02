@@ -34,6 +34,7 @@
         right: -9999px;
         bottom: -9999px;
         max-width: 100%;
+        width: 100vw!important;
         max-height: 100%;
         margin: auto;
       }
@@ -326,7 +327,7 @@
       }
 
       sup {
-        
+
       }
 
       &__play {
@@ -360,8 +361,8 @@
 
           .input-group {
             position: relative;
-            border: 2px solid $color-white;
-            border-radius: 3px;
+            border: 1px solid $color-white;
+            border-radius: 0;
 
             &.invalid {
               border-color: $color-warning;
@@ -664,7 +665,7 @@
           line-height: 24px;
           float: left;
           max-width: 85%;
-          padding: 18px 15px;
+          padding: 10px;
         }
 
         &__play {
@@ -708,6 +709,7 @@
         }
       }
     }
+
   }
 
   &--active {
@@ -767,5 +769,80 @@
         width: 0;
         transition: all 0s;
       }    }
+  }
+  @media(max-width: 375px) {
+    &:last-child {
+
+      .b_special__content {
+        
+        &__title {
+          font-size: 8.75vw;
+
+        }
+
+        &__text-after {
+          display: none;
+        }
+
+        &__text-before,
+        &__text-after {
+          
+          span{
+            display: block;
+          }
+        }
+
+        &__text-note {
+          span{
+            &.large-text {
+              font-size: 11px;
+              font-weight: 500;
+            }
+          }
+        }
+        &__form {
+          
+          form {
+            max-width: 86%;
+            margin-bottom: 24px;
+            p {
+              font-size: 10px; line-height: 13px;
+              font-weight: 700;
+              margin-bottom: 34px;
+              .hide--xs {
+                display: none;
+              }
+            }
+
+            .input-group {
+              border: 0;
+              max-width: 135px;
+              
+            }
+
+            input,
+            button {
+              height: 30px;
+              padding: 6px;
+              border: 1px solid #fff;
+              font-size: 14px; line-height: 14px;
+            }
+
+            button {
+              width: auto;
+              margin-left: 0;
+            }
+          }
+
+          &__copy {
+            
+            p {
+              font-size: 7px;
+              line-height: 9px;
+            }
+          }
+        }
+      }
+    }
   }
 }
