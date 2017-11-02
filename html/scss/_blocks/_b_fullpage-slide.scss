@@ -155,6 +155,9 @@
       height: 100%;
       text-align: right;
       //mix-blend-mode: multiply;
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        opacity: 0.3;
+      }
 
       img {
         display: inline-block;
@@ -476,6 +479,7 @@
       &__bg__trama,
       &__bg__color {
         z-index: 0;
+        opacity: 0.8;
       }
     }
 
