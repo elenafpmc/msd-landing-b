@@ -256,4 +256,14 @@ $(function() {
 
 	});
 
+
+
+
+	/*	--------------------------------------------------
+		Al hacer click en el logo, vuelve al inicio
+	-------------------------------------------------- */
+	$('.b_header__logo').on('click', function() {
+		fullpage.slideTo(0);
+	});
+
 });
