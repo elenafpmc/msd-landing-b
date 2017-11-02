@@ -15,8 +15,6 @@
     }
     &__covervideo{
       z-index: 1;
-      min-height: 100vh;
-      min-width: 100vw;
     }
     &__video {
       display: none;
@@ -162,7 +160,6 @@
         display: inline-block;
         max-width: 100%;
         max-height: 100%;
-        min-height: 100%;
         transition: transform 1s ease-out 0.5s;
         transform: translateX(-100vw);
         will-change: transform;
@@ -774,10 +771,37 @@
       }    }
   }
   @media(max-width: 375px) {
+    &.facil {
+      .b_special__content {
+        &__button {
+          font-size: 13px; line-height: 16px;
+          max-width: 150px;
+          padding: 8px;
+        }
+      }
+    }
+    &.medico {
+      .b_special__content {
+        &__button {
+          font-size: 13px; line-height: 16px;
+          max-width: 130px;
+          padding: 8px;
+        }
+      }
+    }
+    &.test {
+      .b_special__content {
+        &__button {
+          font-size: 13px; line-height: 16px;
+          max-width: 100px;
+          padding: 6px 12px;
+        }
+      }
+    }
     &:last-child {
 
       .b_special__content {
-
+        
         &__title {
           font-size: 8.75vw;
 
@@ -789,7 +813,7 @@
 
         &__text-before,
         &__text-after {
-
+          
           span{
             display: block;
           }
@@ -804,7 +828,7 @@
           }
         }
         &__form {
-
+          
           form {
             max-width: 86%;
             margin-bottom: 24px;
@@ -820,7 +844,7 @@
             .input-group {
               border: 0;
               max-width: 135px;
-
+              
             }
 
             input,
@@ -838,7 +862,7 @@
           }
 
           &__copy {
-
+            
             p {
               font-size: 7px;
               line-height: 9px;
