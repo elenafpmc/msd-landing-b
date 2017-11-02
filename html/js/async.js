@@ -5171,10 +5171,14 @@ $(function() {
 	  "callback": function(e){
 	    //console.log(e.direction); // "up" or "down"
 			if (e.direction === "up" && scrollCount === 0){
-				fullpage.slideNext();
+				if ( !$('.b_fullpage').is('.video-overlay-open') ) {
+					fullpage.slideNext();
+				}
 			}
 			else if (e.direction === "down" && scrollCount === 0){
-				fullpage.slidePrev();
+				if ( !$('.b_fullpage').is('.video-overlay-open') ) {
+					fullpage.slidePrev();
+				}
 			}
 			if (scrollCount === 0){
 				scrollCount = 1;
@@ -5184,7 +5188,9 @@ $(function() {
 	});
 
 	$('.b_fullpage__scroll-down').on('click', function(){
-		fullpage.slideNext();
+		if ( !$('.b_fullpage').is('.video-overlay-open') ) {
+			fullpage.slideNext();
+		}
 	});
 
 	var video_player_interval;
