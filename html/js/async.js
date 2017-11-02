@@ -5214,6 +5214,10 @@ $(function() {
 			var partial = video.currentTime;
 			$('.b_special__video__controls__progress').css('width', (partial/total)*100+'%');
 		}, 100);
+		fullpage.allowSlidePrev = false;
+		fullpage.allowSlideNext = false;
+		fullpage.allowTouchMove = false;
+		fullpage.update();
 	});
 
 	$('.b_special__video__close').on('click', function(){
@@ -5223,6 +5227,10 @@ $(function() {
 		var video = $(this).closest('.b_fullpage__slide').find('.b_special__video video')[0];
 		video.currentTime = 0;
 		$('.b_special__video__controls__progress').css('width', '0%');
+		fullpage.allowSlidePrev = true;
+		fullpage.allowSlideNext = true;
+		fullpage.allowTouchMove = true;
+		fullpage.update();
 	});
 
 	$('.b_special__video__controls__back').on('click', function(){
@@ -5262,25 +5270,34 @@ $(function() {
 		covervideo.coverVid(width, height);
 	}
 
-	// $(document).on('mousemove', function(ev){
-	// 	var lines = $('b_fullpage__slide--active .b_special__line--desktop');
-	// 	var cursorX = ev.pageX;
-	// 	//var cursorY = event.pageY;
-	// 	var refX = $(window).width() / 2;
-	// 	//var refY = $(window).height() / 2;
-	// 	var range = 50; //in px;
-	//
-	// 	if (cursorX <= refX){
-	// 		var moveX = -((refX - cursorX) / refX) * range;
-	// 	}
-	// 	else{
-	// 		var moveX = ((cursorX - refX) / refX) * range;
-	// 	}
-	// 	lines.css({
-	// 		'transform': 'translateX('+moveX+'px)',
-	// 		'transition': 'transform 0.05s linear 0s',
-	// 	});
-	// });
+	$(document).on('mousemove', function(ev){
+		var lines = $('.b_fullpage__slide--active .b_special__line--desktop');
+		var cursorX = ev.pageX;
+		//var cursorY = event.pageY;
+		var refX = $(window).width() / 2;
+		//var refY = $(window).height() / 2;
+		var rangeX = $(window).width() * 0.05; //in px;
+		var factors = [1.2, 0.8, 0.4];
+
+		if (cursorX <= refX){
+			var moveX = ((refX - cursorX) / refX) * rangeX;
+		}
+		else{
+			var moveX = -1 * ((cursorX - refX) / refX) * rangeX;
+		}
+		lines.css({
+			'transition': 'margin 1s ease-out 0s',
+		});
+		lines.filter('.b_special__line--top').css({
+			'margin-left': (moveX * factors[0])+'px',
+		});
+		lines.filter('.b_special__line--middle').css({
+			'margin-left': (moveX * factors[1])+'px',
+		});
+		lines.filter('.b_special__line--bottom').css({
+			'margin-left': (moveX * factors[2])+'px',
+		});
+	});
 
 
 	/*	--------------------------------------------------
