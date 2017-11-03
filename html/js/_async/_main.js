@@ -164,32 +164,34 @@ $(function() {
 	}
 
 	$(document).on('mousemove', function(ev){
-		var lines = $('.b_fullpage__slide--active .b_special__line--desktop');
-		var cursorX = ev.pageX;
-		//var cursorY = event.pageY;
-		var refX = $(window).width() / 2;
-		//var refY = $(window).height() / 2;
-		var rangeX = $(window).width() * 0.05; //in px;
-		var factors = [1.2, 0.8, 0.4];
+		if($(window).width() >= 991){
+			var lines = $('.b_fullpage__slide--active .b_special__line--desktop');
+			var cursorX = ev.pageX;
+			var refX = $(window).width() / 2;
+			var rangeX = $(window).width() * 0.05; //in px;
+			var factors = [1, 0.75, -1];
 
-		if (cursorX <= refX){
-			var moveX = ((refX - cursorX) / refX) * rangeX;
+			if (lines.length){
+				if (cursorX <= refX){
+					var moveX = ((refX - cursorX) / refX) * rangeX;
+				}
+				else{
+					var moveX = -1 * ((cursorX - refX) / refX) * rangeX;
+				}
+				lines.css({
+					'transition': 'margin 1s ease-out 0s',
+				});
+				lines.filter('.b_special__line--top').css({
+					'margin-left': (moveX * factors[0])+'px',
+				});
+				lines.filter('.b_special__line--middle').css({
+					'margin-left': (moveX * factors[1])+'px',
+				});
+				lines.filter('.b_special__line--bottom').css({
+					'margin-left': (moveX * factors[2])+'px',
+				});
+			}
 		}
-		else{
-			var moveX = -1 * ((cursorX - refX) / refX) * rangeX;
-		}
-		lines.css({
-			'transition': 'margin 1s ease-out 0s',
-		});
-		lines.filter('.b_special__line--top').css({
-			'margin-left': (moveX * factors[0])+'px',
-		});
-		lines.filter('.b_special__line--middle').css({
-			'margin-left': (moveX * factors[1])+'px',
-		});
-		lines.filter('.b_special__line--bottom').css({
-			'margin-left': (moveX * factors[2])+'px',
-		});
 	});
 
 
