@@ -346,6 +346,11 @@
         cursor: pointer;
         opacity: 0;
         transition: opacity 1.5s ease-out 1s;
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          svg {
+            overflow: visible;
+          }
+        }
       }
 
       &__form {
