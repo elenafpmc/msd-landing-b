@@ -101,6 +101,11 @@ $(function() {
 			fullpage.slideNext();
 		}
 	});
+	$('.b_fullpage__scroll-up').on('click', function(){
+		if ( !$('.b_fullpage').is('.video-overlay-open') ) {
+			fullpage.slidePrev();
+		}
+	});
 
 	/*	--------------------------------------------------
 		Al hacer click en el logo, vuelve al inicio
