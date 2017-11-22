@@ -82,6 +82,9 @@
       @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
         transform: scale(2) translate(25%, 25%);
       }
+      @supports (-ms-ime-align:auto) {
+        transform: scale(2) translate(25%, 25%);
+      }
     }
     span {
       font-family: $fontstack-roboto;
@@ -118,6 +121,9 @@
       top: 0;
       transition: all 0.15s ease-out 0s;
       @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        transform: scale(2) translate(25%, 25%);
+      }
+      @supports (-ms-ime-align:auto) {
         transform: scale(2) translate(25%, 25%);
       }
     }

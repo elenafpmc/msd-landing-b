@@ -160,6 +160,9 @@
       @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
         opacity: 0.3;
       }
+      @supports (-ms-ime-align:auto) {
+        opacity: 0.3;
+      }
 
       img {
         display: inline-block;
@@ -347,6 +350,12 @@
             overflow: visible;
           }
         }
+        @supports (-ms-ime-align:auto) {
+          svg {
+            overflow: visible;
+          }
+        }
+
       }
 
       &__form {
@@ -490,6 +499,13 @@
         opacity: 0.8;
       }
     }
+    @supports (-ms-ime-align:auto) {
+      &__bg__trama,
+      &__bg__color {
+        z-index: 0;
+        opacity: 0.8;
+      }
+    }
 
     @media(max-width: $screen-sm-max){
       &--background {
@@ -585,6 +601,9 @@
         padding-top: 17vh;
 
         @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          max-width: none;
+        }
+        @supports (-ms-ime-align:auto) {
           max-width: none;
         }
 
@@ -791,6 +810,10 @@
   &.contacto {
     .b_special__content {
       @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        max-width: none;
+        margin-left: 35%!important;
+      }
+      @supports (-ms-ime-align:auto) {
         max-width: none;
         margin-left: 35%!important;
       }
