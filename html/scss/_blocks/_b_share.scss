@@ -78,6 +78,9 @@
           svg {
             width: 20px;
             height: 20px;
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+              transform: scale(2) translate(25%, 25%);
+            }
           }
         }
       }
