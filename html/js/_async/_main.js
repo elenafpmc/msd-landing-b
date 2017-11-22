@@ -119,6 +119,7 @@ $(function() {
 		clearInterval(video_player_interval);
 		var video = $(this).closest('.b_fullpage__slide').find('.b_special__video video')[0];
 		video.currentTime = 0;
+		video.pause();
 		$('.b_special__video__controls__progress').css('width', '0%');
 		fullpage.allowSlidePrev = true;
 		fullpage.allowSlideNext = true;
