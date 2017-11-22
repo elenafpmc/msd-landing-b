@@ -36,26 +36,39 @@ svg4everybody();
 $(function() {
 
 	var fullpage = new Swiper('.b_fullpage', {
-    speed: 400,
-    direction: 'horizontal',
+	    speed: 400,
+	    direction: 'horizontal',
 		slideActiveClass: 'b_fullpage__slide--active',
-		// mousewheel: {
-		// 	forceToAxis: false,
-		// 	sensitivity: 1,
-		// 	releaseOnEdges: false,
-		// 	invert: true
-		// },
+			// mousewheel: {
+			// 	forceToAxis: false,
+			// 	sensitivity: 1,
+			// 	releaseOnEdges: false,
+			// 	invert: true
+			// },
 		pagination: {
-	    el: '.b_fullpage__pagination',
-	    type: 'bullets',
-			clickable: true,
-			bulletClass: 'b_fullpage__pagination__bullet',
-			bulletActiveClass: 'b_fullpage__pagination__bullet--active',
-			renderBullet: function (index, className) {
-				var slide = $('.b_fullpage__slide').eq(index);
-		    return '<span class="' + className + '"><span>' + slide.data('pagination') + '</span></span>';
-		  }
-	  }
+		    el: '.b_fullpage__pagination',
+		    type: 'bullets',
+				clickable: true,
+				bulletClass: 'b_fullpage__pagination__bullet',
+				bulletActiveClass: 'b_fullpage__pagination__bullet--active',
+				renderBullet: function (index, className) {
+					var slide = $('.b_fullpage__slide').eq(index);
+			    return '<span class="' + className + '"><span>' + slide.data('pagination') + '</span></span>';
+			  }
+	  	},
+	  	on: {
+	  		slideChange: function() {
+	  			var slides = this.slides;
+	  			var activeIndex = this.activeIndex;
+	  			if ( $(slides[activeIndex]).is('.contacto') ) {
+	  				$('.b_fullpage__scroll-down').hide();
+	  				$('.b_fullpage__scroll-up').show();
+	  			} else {
+	  				$('.b_fullpage__scroll-down').show();
+	  				$('.b_fullpage__scroll-up').hide();
+	  			}
+	  		}
+	  	}
 	});
 
 	var scrollCount = 0;

@@ -95,6 +95,41 @@
       display: none;
     }
   }
+  &__scroll-up {
+    display: none;
+    position: absolute;
+    bottom: 5vh;
+    left: 60px;
+    cursor: pointer;
+    z-index: 2;
+
+    &:hover {
+      > svg {
+        top: -10px;
+      }
+    }
+    > svg {
+      display: inline;
+      position: relative;
+      float: left;
+      top: 0;
+      transition: all 0.15s ease-out 0s;
+    }
+    span {
+      font-family: $fontstack-roboto;
+      font-weight: $fontweight-black;
+      font-size: 10px;
+      line-height: 16px;
+      letter-spacing: 1px;
+      color: $color-white;
+    }
+    &__text--desktop {
+      display: inline;
+    }
+    &__text--mobile {
+      display: none;
+    }
+  }
 
   &__code {
     position: absolute;
@@ -158,6 +193,28 @@
       }
     }
     &__scroll-down {
+      bottom: 3vh;
+      left: 5px;
+      max-width: 45%;
+
+      &__text--desktop {
+        display: none;
+      }
+      &__text--mobile {
+        display: inline;
+      }
+      svg {
+        transform: rotate(-90deg);
+        margin-right: 3px;
+        top: -5px;
+      }
+      &:hover {
+        > svg {
+          top: -5px;
+        }
+      }
+    }
+    &__scroll-up {
       bottom: 3vh;
       left: 5px;
       max-width: 45%;
