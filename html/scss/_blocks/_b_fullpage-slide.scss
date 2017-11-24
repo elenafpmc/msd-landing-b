@@ -827,6 +827,7 @@
       }
     }
   }
+
   @media(max-width: $screen-sm-max) {
     &.facil {
       .b_special__content {
@@ -856,6 +857,7 @@
       }
     }
   }
+
   @media(max-width: 375px) {
     &:last-child {
 
@@ -932,4 +934,32 @@
       }
     }
   }
+  @media(max-width: $screen-md-max) and (min-width: $screen-sm-max){
+    &.contacto {
+      .b_special__content{
+        padding-top: 6vh;
+      }
+      .b_special__content__title {
+        margin-bottom: 3vh;
+        font-size: 9.5vh;
+        line-height: 7vh;
+      }
+      .b_special__content__text-after {
+        margin-bottom: 2.5vh;
+      }
+      .b_share {
+        margin-bottom: 2.5vh;
+      }
+      .b_special__content__form {
+        margin-top: 2.5vh;
+        form {
+          margin-bottom: 2.5vh;
+        }
+      }
+      .b_special__content__form__copy {
+        max-width: 90%;
+      }
+    }
+  }
+
 }
