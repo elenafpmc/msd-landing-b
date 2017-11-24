@@ -83,11 +83,7 @@
         transform: scale(2) translate(25%, 25%);
       }
       @supports (-ms-ime-align:auto) {
-        transform: scale(2) translate(25%, 25%);
-      }
-
-      @supports (-ms-accelerator:true) {
-        transform: scale(2) translate(25%, 25%);
+        //transform: scale(2) translate(25%, 25%);
       }
     }
     span {
@@ -128,7 +124,7 @@
         transform: scale(2) translate(25%, 25%);
       }
       @supports (-ms-ime-align:auto) {
-        transform: scale(2) translate(25%, 25%);
+        //transform: scale(2) translate(25%, 25%);
       }
     }
     span {
@@ -223,6 +219,12 @@
         transform: rotate(-90deg);
         margin-right: 3px;
         top: -5px;
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          transform: scale(2) translate(25%, -25%) rotate(-90deg);
+        }
+        @supports (-ms-ime-align:auto) {
+          //transform: scale(2) translate(25%, 25%);
+        }
       }
       &:hover {
         > svg {
@@ -245,6 +247,12 @@
         transform: rotate(-90deg);
         margin-right: 3px;
         top: -5px;
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          transform: scale(2) translate(25%, -35%) rotate(-90deg);
+        }
+        @supports (-ms-ime-align:auto) {
+          //transform: scale(2) translate(25%, 25%);
+        }
       }
       &:hover {
         > svg {

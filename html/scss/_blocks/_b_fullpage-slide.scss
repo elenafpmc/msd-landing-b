@@ -101,6 +101,13 @@
       border-radius: 50%;
       pointer-events: none;
 
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        display: none !important;
+      }
+      @supports (-ms-ime-align:auto) {
+        display: none !important;
+      }
+
       &--top {
         height: 7vh;
         width: 7vh;
@@ -158,10 +165,10 @@
       text-align: right;
       //mix-blend-mode: multiply;
       @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        opacity: 0.3;
+        opacity: 0.35;
       }
       @supports (-ms-ime-align:auto) {
-        opacity: 0.3;
+        opacity: 0.35;
       }
 
       img {
@@ -812,11 +819,11 @@
     .b_special__content {
       @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
         max-width: none;
-        margin-left: 35%!important;
+        padding-left: 33%!important;
       }
       @supports (-ms-ime-align:auto) {
         max-width: none;
-        margin-left: 35%!important;
+        padding-left: 33%!important;
       }
     }
   }
@@ -910,6 +917,7 @@
             button {
               width: auto;
               margin-left: 0;
+              border-radius: 0;
             }
           }
 

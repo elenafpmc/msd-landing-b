@@ -30,17 +30,6 @@
         .icon {
           transition: all 0.3s ease-out 0s;
           fill: $color-white;
-            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-              transform: scale(2) translate(25%, 25%);
-            }
-            @supports (-ms-ime-align:auto) {
-              transform: scale(2) translate(25%, 25%);
-            }
-
-            @supports (-ms-accelerator:true) {
-              transform: scale(2) translate(25%, 25%);
-            }
-          
         }
 
         &:hover {
@@ -57,7 +46,7 @@
     margin-left: -5vw;
     a {
       padding: 5px 0;
-      svg {
+      .icon {
         width: 50px;
         height: 50px;
         g{
@@ -71,6 +60,7 @@
     position: absolute;
     top: 43%;
     right: 10px;
+    z-index: 2;
 
     &__list {
       display: block;
@@ -89,15 +79,9 @@
           margin-right: 0;
           margin-bottom: 10px;
 
-          svg {
+          .icon {
             width: 20px;
             height: 20px;
-            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-              transform: scale(2) translate(25%, 25%);
-            }
-            @supports (-ms-ime-align:auto) {
-              transform: scale(2) translate(25%, 25%);
-            }
           }
         }
       }
@@ -107,9 +91,15 @@
       margin-left: -5vw;
       a {
         padding: 5px 0;
-        svg {
+        .icon {
           width: 30px;
           height: 30px;
+          @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            transform: scale(1.25) translate(12%, 12%);
+          }
+          @supports (-ms-ime-align:auto) {
+            // transform: scale(2) translate(25%, 25%);
+          }
         }
       }
     }
