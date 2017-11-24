@@ -30,6 +30,17 @@
         .icon {
           transition: all 0.3s ease-out 0s;
           fill: $color-white;
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+              transform: scale(2) translate(25%, 25%);
+            }
+            @supports (-ms-ime-align:auto) {
+              transform: scale(2) translate(25%, 25%);
+            }
+
+            @supports (-ms-accelerator:true) {
+              transform: scale(2) translate(25%, 25%);
+            }
+          
         }
 
         &:hover {
@@ -49,6 +60,9 @@
       svg {
         width: 50px;
         height: 50px;
+        g{
+          fill: $color-white;
+        }
       }
     }
   }

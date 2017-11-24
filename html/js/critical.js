@@ -444,25 +444,24 @@ window.addEventListener("resize", initCriticalHelpers);
 
 function ejemploTemplate(){
 
-	
+
 }
-	
-	
-	
+
+
+
 /*	--------------------------------------------------
 	Llamada de funciones
 -------------------------------------------------- */
 function initMainCritical(){
 	//Añadimos aqui las funciones declaradas arriba
-	ejemploTemplate();	
+	ejemploTemplate();
 }
 //Esperamos a que el DOM este cargado...
-document.addEventListener("DOMContentLoaded", function(event) { 
+document.addEventListener("DOMContentLoaded", function(event) {
 
 	initMainCritical();
-	
+
 	//Recarga si Resize
-	window.addEventListener("resize", initMainCritical);			
+	window.addEventListener("resize", initMainCritical);
 
 });
-
